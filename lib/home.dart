@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:geminiapp/chat_section.dart';
+import 'package:geminiapp/stream_responses.dart';
+import 'package:geminiapp/text_image_input.dart';
 import 'package:geminiapp/text_only_input.dart';
 
 class HomePage extends StatefulWidget {
@@ -44,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const TextOnlyInput()));
+                    builder: (context) => const TextImageInput()));
               },
               child: const Text(
                   'Generate text from text-and-image input (multimodal)'),
@@ -53,7 +56,7 @@ class _HomePageState extends State<HomePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const TextOnlyInput()));
+                    builder: (context) => const StreamResponses()));
               },
               child: const Text('Build multi-turn conversations (chat)'),
             ),
@@ -61,7 +64,7 @@ class _HomePageState extends State<HomePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const TextOnlyInput()));
+                    builder: (context) => const MultiTurnConversation()));
               },
               child: const Text('Use streaming for faster interactions'),
             ),
